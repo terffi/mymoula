@@ -34,16 +34,18 @@ async function main() {
   const __dirname = path.dirname(__filename);
 
   // Make sure to put this after all api routes are being handled (e.g. app.use('/api/authorize', authRoutes);)
+  console.log(process.env.NODE_ENV)
+  console.log(__dirname)
   if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "../app/front/dist")));
+    app.use(express.static(path.join(__dirname, "../../front/dist")));
 
     app.get("*", (req, res) => {
-      return res.sendFile(path.join(__dirname, "../app/front/index.html"));
+      return res.sendFile(path.join(__dirname, "../../front/dist/index.html"));
     });
   }
 
   // For testing purposes, wait-on requests '/'
-  app.get('/', (req, res) => res.send('Server is running!'));
+  // app.get('/', (req, res) => res.send('Server is running!'));
 
   app.listen(port, () => {
     console.log(`App listening on port: ${port}`);
