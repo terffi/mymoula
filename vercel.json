@@ -1,16 +1,10 @@
 {
     "version": 2,
+    "buildCommand": "yarn build",
     "builds": [
         {
             "src": "app/back/dist/index.js",
             "use": "@vercel/node"
-        },
-        {
-            "src": "app/front/package.json",
-            "use": "@vercel/static-build",
-            "config": {
-                "distDir": "dist"
-            }
         }
     ],
     "rewrites": [
