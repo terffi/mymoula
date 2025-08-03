@@ -26,3 +26,8 @@ dist-ssr
 #lock files
 package-lock.json
 yarn.lock
+.vercel
+
+/src/generated/prisma
+
+.env
