@@ -3,7 +3,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import express from 'express';
 import path from "path";
-// import { fileURLToPath } from "url";
+import { fileURLToPath } from "url";
 
 import { appRouter } from '@api/router';
 
@@ -30,8 +30,8 @@ async function main() {
     })
   );
 
-  // const __filename = fileURLToPath(import.meta.url);
-  // const __dirname = path.dirname(__filename);
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
 
   // Make sure to put this after all api routes are being handled (e.g. app.use('/api/authorize', authRoutes);)
   if (process.env.NODE_ENV === "production") {
