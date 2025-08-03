@@ -13,11 +13,11 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "app/front/dist/index.html"
+            "dest": "app/back/dist/index.js"
         },
         {
-            "src": "app/front/dist/index.html",
-            "use": "@vercel/node"
+            "src": "/(.*)",
+            "dest": "app/front/dist/index.html"
         }
     ]
 }
