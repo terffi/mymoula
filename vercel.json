@@ -2,22 +2,22 @@
     "version": 2,
     "builds": [
         {
-            "src": "app/back/dist/index.js",
-            "use": "@vercel/node"
+            "src": "package.json",
+            "use": "@vercel/static-build"
         },
         {
-            "src": "app/back/dist/index.js",
+            "src": "/server/index.js",
             "use": "@vercel/node"
         }
     ],
-    "routes": [
+    "rewrites": [
         {
-            "src": "/(.*)",
-            "dest": "app/back/dist/index.js"
+            "source": "/api/(.*)",
+            "destination": "/server/index.js"
         },
         {
-            "src": "/(.*)",
-            "dest": "app/front/dist/index.html"
+            "source": "(.*)",
+            "destination": "/index.html"
         }
     ]
 }
