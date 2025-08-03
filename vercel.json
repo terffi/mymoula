@@ -1,18 +1,7 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "app/back/index.ts",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "app/front/package.json",
-            "use": "@vercel/static-build",
-            "config": {
-                "distDir": "dist"
-            }
-        }
-    ],
+    "buildCommand": "yarn build",
+    "outputDirectory": "app/front/dist",
     "rewrites": [
         {
             "source": "/api/(.*)",
