@@ -35,10 +35,10 @@ async function main() {
 
   // Make sure to put this after all api routes are being handled (e.g. app.use('/api/authorize', authRoutes);)
   if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "../client/dist")));
+    app.use(express.static(path.join(__dirname, "../app/front/dist")));
 
     app.get("*", (req, res) => {
-      return res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+      return res.sendFile(path.join(__dirname, "../app/front/index.html"));
     });
   }
 
