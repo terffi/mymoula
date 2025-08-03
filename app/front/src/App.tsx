@@ -1,6 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react';
+import { api } from './utils/api';
 // import { api } from '../utils/api';
-import { trpc } from './providers';
 
 function App() {
   const {
@@ -20,7 +20,7 @@ function App() {
 
   if (isLoading) return 'Loading...';
 
-  const test = trpc.post.getSecretMessage.useQuery();
+  const test = api.post.getSecretMessage.useQuery();
 
   return isAuthenticated ? (
     <>

@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 import { Auth0Provider } from '@auth0/auth0-react';
-import { TrpcProvider } from './providers.tsx';
+import { TrpcProvider } from '@/components/TrpcProvider';
 // import { queryClient } from '../utils/trpc.ts';
 
 // TODO: install dotenv and use it
