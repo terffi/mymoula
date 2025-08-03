@@ -32,6 +32,7 @@ async function main() {
   );
 
   ViteExpress.config({
+    mode: 'production',
     inlineViteConfig: {
       build: { outDir: 'app/front/dist' },
     },
