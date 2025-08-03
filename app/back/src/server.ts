@@ -2,11 +2,11 @@ import { createExpressMiddleware } from '@trpc/server/adapters/express';
 import cors from 'cors';
 import 'dotenv/config';
 import express from 'express';
-import path from "path";
-import { fileURLToPath } from "url";
+// import path from "path";
+// import { fileURLToPath } from "url";
+import ViteExpress from 'vite-express';
 
 import { appRouter } from '@api/router';
-
 
 async function main() {
   const port = process.env.PORT || 3000;
@@ -14,7 +14,6 @@ async function main() {
   const app = express();
 
   app.use(cors());
-
 
   app.use(
     '/trpc',
@@ -24,34 +23,43 @@ async function main() {
       onError:
         process.env.NODE_ENV === 'development'
           ? ({ path, error }) => {
-              console.error(`❌ tRPC failed on ${path ?? '<no-path>'}: ${error.message}`);
+              console.error(
+                `❌ tRPC failed on ${path ?? '<no-path>'}: ${error.message}`
+              );
             }
           : undefined,
     })
   );
 
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = path.dirname(__filename);
+  ViteExpress.config({
+    inlineViteConfig: {
+      build: { outDir: 'app/front/dist' },
+    },
+  });
 
-  // Make sure to put this after all api routes are being handled (e.g. app.use('/api/authorize', authRoutes);)
-  console.log(process.env.NODE_ENV)
-  console.log(__dirname)
-  if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "../../front/dist")));
+  ViteExpress.listen(app, 3000, () => console.log('Server is listening...'));
 
-    app.get("*", (req, res) => {
-      return res.sendFile(path.join(__dirname, "../../front/dist/index.html"));
-    });
-  }
+  // const __filename = fileURLToPath(import.meta.url);
+  // const __dirname = path.dirname(__filename);
+
+  // // Make sure to put this after all api routes are being handled (e.g. app.use('/api/authorize', authRoutes);)
+  // console.log(process.env.NODE_ENV)
+  // console.log(__dirname)
+  // if (process.env.NODE_ENV === "production") {
+  //   app.use(express.static(path.join(__dirname, "../../front/dist")));
+
+  //   app.get("*", (req, res) => {
+  //     return res.sendFile(path.join(__dirname, "../../front/dist/index.html"));
+  //   });
+  // }
 
   // For testing purposes, wait-on requests '/'
   // app.get('/', (req, res) => res.send('Server is running!'));
 
-  app.listen(port, () => {
-    console.log(`App listening on port: ${port}`);
-  });
+  // app.listen(port, () => {
+  //   console.log(`App listening on port: ${port}`);
+  // });
 }
-
 
 void main();
 // import { createHTTPServer } from '@trpc/server/adapters/standalone';
@@ -61,7 +69,6 @@ void main();
 // import path from 'path';
 
 // // const port = process.env.PORT || 3000;
-
 
 // const server = createHTTPServer({
 //   middleware: cors(),
@@ -91,4 +98,3 @@ void main();
 // }
 
 // server.listen(3000);
-
