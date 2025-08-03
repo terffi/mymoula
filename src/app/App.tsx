@@ -35,6 +35,9 @@ function App() {
     <div className="flex w-dvw items-center justify-center gap-2.5">
       {error && <p>Error: {error.message}</p>}
 
+      <p> {test.isError}</p>
+      <p> {test.data} </p>
+
       <button onClick={signup}>Signup</button>
 
       <button onClick={void login}>Login</button>
