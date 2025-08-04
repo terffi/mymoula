@@ -10,10 +10,10 @@
         },
         {
             "src": "app/back/src/server.ts",
-            "use": "yarn tsx",
+            "use": "@vercel/node",
             "config": {
                 "includeFiles": [
-                    "app/back/src/**"
+                    "app/back/**"
                 ]
             }
         }
