@@ -9,20 +9,19 @@
             }
         },
         {
-            "src": "app/back/dist/server.js",
-            "use": "@vercel/node",
+            "src": "app/back/src/server.ts",
+            "use": "yarn tsx",
             "config": {
                 "includeFiles": [
-                    "app/back/dist/**"
-                ],
-                "distDir": "app/back/dist"
+                    "app/back/src/**"
+                ]
             }
         }
     ],
     "rewrites": [
         {
             "source": "/api/:path*",
-            "destination": "app/back/dist/server.js"
+            "destination": "app/back/src/server.ts"
         },
         {
             "source": "/(.*)",
