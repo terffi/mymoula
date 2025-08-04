@@ -15,7 +15,7 @@ const app = express();
 app.use(cors());
 
 app.use(
-  '/trpc',
+  '/api',
   createExpressMiddleware({
     router: appRouter,
     createContext: (ctx) => ({ session: null }),
