@@ -2,26 +2,27 @@
     "version": 2,
     "builds": [
         {
-            "src": "app/back/src/server.ts",
-            "use": "@vercel/node",
-            "config": {
-                "includeFiles": [
-                    "app/back/src/**"
-                ]
-            }
-        },
-        {
             "src": "package.json",
             "use": "@vercel/static-build",
             "config": {
                 "distDir": "app/front/dist"
+            }
+        },
+        {
+            "src": "app/back/dist/server.ts",
+            "use": "@vercel/node",
+            "config": {
+                "includeFiles": [
+                    "app/back/dist/**"
+                ],
+                "distDir": "app/back/dist"
             }
         }
     ],
     "rewrites": [
         {
             "source": "/api/:path*",
-            "destination": "app/back/src/server.ts"
+            "destination": "app/back/dist/server.ts"
         },
         {
             "source": "/(.*)",
