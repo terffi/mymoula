@@ -34,5 +34,8 @@
   "workspaces": [
     "app/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "tsx": "^4.20.3"
+  }
 }
