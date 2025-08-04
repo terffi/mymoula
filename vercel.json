@@ -3,7 +3,12 @@
     "builds": [
         {
             "src": "app/back/src/server.ts",
-            "use": "@vercel/node"
+            "use": "@vercel/node",
+            "config": {
+                "includeFiles": [
+                    "app/back/src/**"
+                ]
+            }
         },
         {
             "src": "package.json",
