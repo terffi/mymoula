@@ -2,13 +2,8 @@
     "version": 2,
     "builds": [
         {
-            "src": "app/back/dist/server.js",
-            "use": "@vercel/node",
-            "config": {
-                "includeFiles": [
-                    "app/back/dist/**"
-                ]
-            }
+            "src": "app/back/src/server.ts",
+            "use": "@vercel/node"
         },
         {
             "src": "package.json",
@@ -21,7 +16,7 @@
     "rewrites": [
         {
             "source": "/api/:path*",
-            "destination": "app/back/dist/server.ts"
+            "destination": "app/back/src/server.ts"
         },
         {
             "source": "/(.*)",
