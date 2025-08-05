@@ -25,7 +25,7 @@
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "start:backend": "node apps/api/dist/server.js",
     "build-back": "cd ./app/back && yarn type-check && yarn pre-commit-build",
-    "commit-build-back": "git add ./app/back/dist"
+    "commit-build-back": "git add ./app/back/dist -f"
   },
   "pre-commit": [
     "build-back",
