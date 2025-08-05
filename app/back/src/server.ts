@@ -39,6 +39,8 @@ ViteExpress.config({
 
 ViteExpress.listen(app, 3000, () => console.log('Server is listening...'));
 
+export default app;
+
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = path.dirname(__filename);
 
