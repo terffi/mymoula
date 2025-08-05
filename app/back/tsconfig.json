@@ -10,7 +10,9 @@
     "paths": {
       "@api/*": ["./src/*"]
     },
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "target": "es2020",
+    "moduleResolution": "bundler"
   },
   "tsc-alias": {
     "resolveFullPaths": true,
