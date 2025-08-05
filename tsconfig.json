@@ -4,13 +4,16 @@
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "sourceMap": true,
-    "outDir": "distz é",
+    "outDir": "dist",
     "baseUrl": ".",
 
     "paths": {
       "@api/*": ["./src/*"]
     },
-    "rootDir": "./src"
+    "rootDir": "./src",
+
+    "target": "ES2021",
+    "module": "ESNext"
   },
   "tsc-alias": {
     "resolveFullPaths": true,
