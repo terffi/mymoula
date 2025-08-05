@@ -10,7 +10,7 @@
         },
         {
             "src": "app/back/src/server.ts",
-            "use": "tsx",
+            "use": "@vercel/node --import tsx/esm",
             "config": {
                 "includeFiles": [
                     "app/back/src/**"
