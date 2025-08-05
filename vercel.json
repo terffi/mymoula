@@ -1,17 +1,12 @@
 {
     "version": 2,
     "buildCommand": "yarn build",
-    "builds": [
-        {
-            "src": "package.json",
-            "use": "@vercel/node",
-            "config": {
-                "includeFiles": [
-                    "dist/front/**"
-                ]
-            }
+    "functions": {
+        "dist/back/server.js": {
+            "includeFiles": "dist/back/**"
         }
-    ],
+    },
+    "outputDirectory": "dist/front",
     "rewrites": [
         {
             "source": "/api/:path*",
