@@ -1,3 +1,21 @@
 {
-  "extends": "@repo/back/tsconfig.json"
+  "extends": "@repo/typescript-config/node.json",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "outDir": "distz é",
+    "baseUrl": ".",
+
+    "paths": {
+      "@api/*": ["./src/*"]
+    },
+    "rootDir": "./src"
+  },
+  "tsc-alias": {
+    "resolveFullPaths": true,
+    "verbose": false
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

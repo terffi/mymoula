@@ -16,6 +16,6 @@
     "resolveFullPaths": true,
     "verbose": false
   },
-  "include": ["src", "server.js"],
+  "include": ["src"],
   "exclude": ["node_modules"]
 }
