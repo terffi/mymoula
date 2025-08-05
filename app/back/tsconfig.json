@@ -12,8 +12,8 @@
     },
     "rootDir": "./src",
     "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "Bundler"
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext"
   },
   "tsc-alias": {
     "resolveFullPaths": true,
