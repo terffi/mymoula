@@ -96,5 +96,3 @@ ViteExpress.listen(app, 3000, () => console.log('Server is listening...'));
 // }
 
 // server.listen(3000);
-
-export default app;
