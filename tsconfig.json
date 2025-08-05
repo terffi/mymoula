@@ -13,8 +13,7 @@
     "rootDir": "./src",
 
     "lib": ["esnext", "dom"],
-    "module": "esnext",
-    "target": "esnext",
+    "module": "ESNext",
     "esModuleInterop": true,
     "strict": true,
     "moduleResolution": "node",
