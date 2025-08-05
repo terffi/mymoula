@@ -10,7 +10,7 @@
         },
         {
             "src": "app/back/src/server.ts",
-            "use": "@vercel/node",
+            "use": "@tsx",
             "config": {
                 "includeFiles": [
                     "app/back/src/**"
