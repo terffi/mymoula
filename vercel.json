@@ -9,7 +9,7 @@
             }
         },
         {
-            "src": "app/back/src/server.ts",
+            "src": "app/back/server.js",
             "use": "@vercel/node",
             "config": {
                 "includeFiles": [
@@ -21,7 +21,7 @@
     "rewrites": [
         {
             "source": "/api/:path*",
-            "destination": "app/back/src/server.ts"
+            "destination": "app/back/server.js"
         },
         {
             "source": "/(.*)",
