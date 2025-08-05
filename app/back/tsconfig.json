@@ -10,9 +10,7 @@
     "paths": {
       "@api/*": ["./src/*"]
     },
-    "rootDir": "./src",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext"
+    "rootDir": "./src"
   },
   "tsc-alias": {
     "resolveFullPaths": true,
