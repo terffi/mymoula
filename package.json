@@ -23,8 +23,14 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
-    "start:backend": "node apps/api/dist/server.js"
+    "start:backend": "node apps/api/dist/server.js",
+    "build-back": "cd ./app/back && yarn type-check && yarn pre-commit-build",
+    "commit-build-back": "git add app/back/dist"
   },
+  "pre-commit": [
+    "build-commit-back",
+    "commit-build-back"
+  ],
   "devDependencies": {
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",

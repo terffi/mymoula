@@ -11,14 +11,8 @@
     "lint": "eslint --cache --ext \".ts,.tsx\" src",
     "type-check": "tsc",
     "pre-commit-build": "rimraf dist && tsc --noEmit false && tsc-alias",
-    "add-build": "git add dist",
     "start": "node dist/server.js"
   },
-  "pre-commit": [
-    "type-check",
-    "pre-commit-build",
-    "add-build"
-  ],
   "dependencies": {
     "@trpc/server": "^11.4.3",
     "@types/node": "^24.1.0",
