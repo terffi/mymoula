@@ -10,7 +10,6 @@
     "lint": "eslint --cache --ext \".ts,.tsx\" src",
     "type-check": "tsc",
     "build": "rimraf dist && tsc --noEmit false && tsc-alias",
-    "postbuild": "ls -R dist",
     "start": "node dist/server.js"
   },
   "dependencies": {

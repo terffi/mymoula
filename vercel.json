@@ -1,19 +1,13 @@
 {
     "version": 2,
+    "buildCommand": "yarn build",
     "builds": [
         {
-            "src": "package.json",
-            "use": "@vercel/static-build",
-            "config": {
-                "distDir": "app/front/dist"
-            }
-        },
-        {
-            "src": "app/back/dist/server.js",
+            "src": "dist/back/server.js",
             "use": "@vercel/node",
             "config": {
                 "includeFiles": [
-                    "app/back/dist/**"
+                    "dist/front/**"
                 ]
             }
         }
@@ -21,11 +15,11 @@
     "rewrites": [
         {
             "source": "/api/:path*",
-            "destination": "app/back/dist/server.js"
+            "destination": "/dist/back/server.js"
         },
         {
             "source": "/(.*)",
-            "destination": "/index.html"
+            "destination": "/dist/front/index.html"
         }
     ]
 }

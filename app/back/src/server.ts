@@ -33,7 +33,7 @@ app.use(
 ViteExpress.config({
   mode: 'production',
   inlineViteConfig: {
-    build: { outDir: 'app/front/dist' },
+    build: { outDir: 'dist/front' },
   },
 });
 

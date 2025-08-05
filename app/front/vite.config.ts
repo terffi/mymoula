@@ -14,4 +14,8 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    outDir: '../../dist/front', // <-- output relative to root dist folder
+    emptyOutDir: true, // clean output folder before build
+  },
 });

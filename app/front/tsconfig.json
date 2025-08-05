@@ -19,7 +19,8 @@
     "paths": {
       "@/*": ["./app/front/src/*"],
       "@api/*": ["./app/back/src/*"]
-    }
+    },
+    "outDir": "../../dist/front"
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

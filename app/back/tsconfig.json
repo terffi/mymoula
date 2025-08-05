@@ -2,19 +2,15 @@
   "extends": "@repo/typescript-config/node.json",
   "compilerOptions": {
     "module": "commonjs",
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es6",
     "noImplicitAny": true,
-    "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "../../dist/back",
     "baseUrl": ".",
 
     "paths": {
       "@api/*": ["./src/*"]
-    },
-    "rootDir": "./src"
+    }
   },
   "tsc-alias": {
     "resolveFullPaths": true,
