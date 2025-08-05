@@ -10,7 +10,7 @@
     "dev": "tsx src/server",
     "lint": "eslint --cache --ext \".ts,.tsx\" src",
     "type-check": "tsc",
-    "build": "rimraf dist && tsc --noEmit false && tsc-alias",
+    "depr-build": "rimraf dist && tsc --noEmit false && tsc-alias",
     "start": "node dist/server.js"
   },
   "dependencies": {
