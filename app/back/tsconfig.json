@@ -7,9 +7,6 @@
     "outDir": "dist",
     "baseUrl": ".",
 
-    "target": "ES2021",
-    "module": "ESNext",
-
     "paths": {
       "@api/*": ["./src/*"]
     },
