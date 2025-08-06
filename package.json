@@ -23,18 +23,11 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
-    "start:backend": "node apps/api/dist/server.js",
-    "build-back": "cd ./app/back && yarn type-check && yarn pre-commit-build",
-    "commit-build-back": "git add ./app/back/dist -f"
+    "start:backend": "node apps/api/dist/server.js"
   },
-  "pre-commit": [
-    "build-back",
-    "commit-build-back"
-  ],
   "devDependencies": {
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
-    "pre-commit": "^1.2.2",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "turbo": "latest"

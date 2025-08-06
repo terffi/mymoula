@@ -1,6 +1,6 @@
 // import { postRouter } from '~/server/api/routers/post';
-import { postRouter } from './test.js';
-import { createCallerFactory, createTRPCRouter } from '../trpc.js';
+import { postRouter } from './test.ts';
+import { createCallerFactory, createTRPCRouter } from '../trpc.ts';
 
 /**
  * This is the primary router for your server.
