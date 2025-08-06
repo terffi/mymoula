@@ -8,9 +8,10 @@
     "baseUrl": ".",
 
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "allowImportingTsExtensions": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "isolatedModules": true,
+    "moduleDetection": "force",
 
     "paths": {
       "@api/*": ["./src/*"]

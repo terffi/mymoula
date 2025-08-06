@@ -1,4 +1,4 @@
-import { createTRPCRouter, protectedProcedure } from '../trpc.ts';
+import { createTRPCRouter, protectedProcedure } from '../trpc.js';
 
 // import {
 //   createTRPCRouter,
