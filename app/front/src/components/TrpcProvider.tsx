@@ -11,8 +11,7 @@ export function TrpcProvider({ children }: { children: React.ReactNode }) {
     api.createClient({
       links: [
         httpBatchLink({
-          url: `${process.env.BACK_PUBLIC_URL}/api`, // todo make that a env var and use it in vite.config aswell (+ make it change depending on dev/prod/preview)
-          // url: 'http://localhost:3000/api',
+          url: `/api`, // todo make that a env var and use it in vite.config aswell (+ make it change depending on dev/prod/preview)
           transformer: superjson,
         }),
       ],
