@@ -6,7 +6,7 @@ import express from 'express';
 // import { fileURLToPath } from "url";
 import ViteExpress from 'vite-express';
 
-import { appRouter } from './router/index'; // todo: put @/api/router and make it work on prod
+import { appRouter } from './router/index.js'; // todo: put @/api/router and make it work on prod
 
 const port = process.env.PORT || 3000;
 
