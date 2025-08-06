@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: `https://${process.env.VERCEL_BRANCH_URL}/api`,
+        target: `${process.env.BACK_PUBLIC_URL}/api`,
         changeOrigin: true,
       },
     },
